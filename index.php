@@ -46,6 +46,7 @@ $hotels = [
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
   <title>Php Hotel</title>
@@ -55,14 +56,38 @@ $hotels = [
 <body>
 
   <div class="container">
-    <?php foreach ($hotels as $hotel){
-      foreach ($hotel as $key => $value ){
-        echo $key . " - " . $value . " ";
-      }
-    }
+    <h1>Hotels</h1>
 
+    <table class="table">
+      <!-- THEAD -->
+      <thead>
+        <tr>          
+            <?php foreach ($hotels as $hotel) { ?>
+              <?php } foreach ($hotel as $key => $value) { ?>
 
-    ?>
+                <th scope="col"><?php echo $key ?></th>              
+                <?php } ?>          
+        </tr>
+      </thead>
+      <!-- TBODY -->
+      <tbody>
+        <?php foreach ($hotels as $hotel) { ?>
+
+          <tr>
+            <?php foreach ($hotel as $key => $value) { ?>
+              <td> <?php echo $value ?> </td>
+              <?php } ?>
+          </tr>
+        <?php } ?>
+    
+      </tbody>
+      
+    </table>
+
+    <div class="box">
+      <img src="img/future_smart_parking2.png" alt="">
+    </div>
+
   </div>
 </body>
 </html>
